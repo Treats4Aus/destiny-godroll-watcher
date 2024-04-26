@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destiny 2 Authentication</title>
+</head>
+<body>
+    <div class="data">
+        <h2>Your code is</h2>
+        <h2 id="auth_code">xxxxxxxxxxxx</h2>
+    </div>
+
+    <script>
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var paramValue = url.searchParams.get("code");
+        if (paramValue !== null) {
+            document.getElementById('auth_code').innerHTML = paramValue;
+        }
+    </script>
+</body>
+</html>
